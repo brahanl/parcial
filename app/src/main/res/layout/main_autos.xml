@@ -1,0 +1,20 @@
+public class Main {
+
+    public static void main(String[] args) {
+    chevrolet michevrolet = new chevrolet("Toyota", "Corolla", 2022, 4, "Gasolina");
+    michevrolet.imprimir();
+    michevrolet.arrancar();
+    michevrolet.acelerar();
+    michevrolet.frenar();
+    michevrolet.apagar();
+
+    System.out.println();
+
+    mustang mimustang = new mustang("mustang tayron", "CBR", 2021, 1000);
+    mimustang.imprimir();
+    mimustang.arrancar();
+    mimustang.acelerar();
+    mimustang.frenar();
+    mimustang.apagar();
+    }
+    }

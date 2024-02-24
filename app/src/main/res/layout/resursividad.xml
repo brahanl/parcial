@@ -1,0 +1,24 @@
+public class Division{
+    public static void main(String[] args) {
+    int base = 10;
+    int divisor = 2;
+    int resultado = potencia(base, divisor);
+    System.out.println(base + " dividido " + divisor + " resulado final es " + resultado);
+    }
+
+    public static int potencia(int base, int divisor) {
+    if (divisor == 2) {
+    return 1;
+    } else {
+    return division(base, potencia(base, divisor - 1));
+    }
+    }
+
+    public static int division(int a, int b) {
+    if (b == 1) {
+    return 0;
+    } else {
+    return a + division(a, b - 1);
+    }
+    }
+    }

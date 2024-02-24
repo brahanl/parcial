@@ -1,0 +1,123 @@
+interface Comparable<T> {
+    int compareTo(T otro);
+    }
+
+    interface Imprimible {
+    void imprimir();
+    }
+
+    abstract class Vehiculo implements Comparable<Vehiculo>, Imprimible {
+        protected String marca;
+        protected String modelo;
+        protected int ano;
+
+        public Vehiculo(String marca, String modelo, int ano) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+        }
+
+        public abstract void arrancar();
+        public abstract void apagar();
+        public abstract void acelerar();
+        public abstract void frenar();
+
+        @Override
+        public int compareTo(Vehiculo otro) {
+        return this.ano - otro.ano;
+        }
+
+        @Override
+        public void imprimir() {
+        System.out.println("Marca: " + marca);
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Ano: " + ano);
+        }
+        }
+
+        class chevrolet extends Vehiculo {
+        private int numeroPuertas;
+        private String tipoCombustible;
+
+        public chevrolet(String marca, String modelo, int ano, int numeroPuertas, String tipoCombustible) {
+        super(marca, modelo, ano);
+        this.numeroPuertas = numeroPuertas;
+        this.tipoCombustible = tipoCombustible;
+        }
+
+        public chevrolet(String marca, String modelo, int ano) {
+        this(marca, modelo, ano, 4, "Gasolina");
+        }
+
+        public void abrirPuertas() {
+        System.out.println("Puertas abiertas");
+        }
+
+        public void cerrarPuertas() {
+        System.out.println("Puertas cerradas");
+        }
+
+        @Override
+        public void imprimir() {
+        super.imprimir();
+        System.out.println("Numero de puertas: " + numeroPuertas);
+        System.out.println("Tipo de combustible: " + tipoCombustible);
+        }
+
+        @Override
+        public void arrancar() {
+        System.out.println("Arrancando el chevrolet");
+        }
+
+        @Override
+        public void apagar() {
+        System.out.println("Apagando el chevrolet");
+        }
+
+        @Override
+        public void acelerar() {
+        System.out.println("Acelerando el chevrolet");
+        }
+
+        @Override
+        public void frenar() {
+        System.out.println("Frenando el chevrolet");
+        }
+        }
+
+        class mustang extends Vehiculo {
+        private int cilindrada;
+
+        public mustang(String marca, String modelo, int ano, int cilindrada) {
+        super(marca, modelo, ano);
+        this.cilindrada = cilindrada;
+        }
+
+
+        @Override
+        public void imprimir() {
+        super.imprimir();
+        System.out.println("Cilindrada: " + cilindrada);
+        }
+
+        @Override
+        public void arrancar() {
+        System.out.println("Arrancando la mustang");
+        }
+
+        @Override
+        public void apagar() {
+        System.out.println("Apagando la mustang");
+        }
+
+        @Override
+        public void acelerar() {
+        System.out.println("Acelerando la mustang");
+        }
+
+        @Override
+        public void frenar() {
+        System.out.println("Frenando la mustang");
+        }
+        }
+        t>
